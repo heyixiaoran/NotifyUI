@@ -1,0 +1,61 @@
+﻿<Page x:Class="NotifyUI.Pages.PageForPrivacy"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Title="PageForPrivacy"
+      d:DesignHeight="300"
+      d:DesignWidth="500"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+    </Page.Resources>
+
+    <StackPanel Margin="20">
+        <TextBlock FontSize="16" Text="Privacy Filters" />
+        <Rectangle Height="1"
+                   Margin="0,5"
+                   HorizontalAlignment="Stretch"
+                   Fill="Gainsboro" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="0,5">
+                <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                    <CheckBox Style="{DynamicResource CheckBoxStyle1}" />
+                    <TextBlock Text="ScreenShot Filter" />
+                </StackPanel>
+                <RichTextBox Height="120" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                <Button Width="90"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        Content="Sync Config"
+                        Style="{DynamicResource ButtonStyle1}" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Margin="0,5">
+                <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                    <CheckBox Style="{DynamicResource CheckBoxStyle1}" />
+                    <TextBlock Text="Application Name Filter" />
+                </StackPanel>
+                <RichTextBox Height="120" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+
+                <TextBlock Margin="0,10">
+                    <Hyperlink Foreground="Blue"
+                               NavigateUri="http://www.baidu.com"
+                               RequestNavigate="Hyperlink_RequestNavigate">
+                        View or Change filter
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Page>
